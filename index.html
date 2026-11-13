@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ICBA Explorer — Turn Ideas Into Impact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Caveat:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="viewport">
+    <main class="stage" id="stage">
+
+      <!-- Each layer is anchored to a side; script.js spreads them out so the page fills any screen -->
+      <div class="layer " data-x="0" data-y="0.4">
+      <div class="deco deco-peach-top"></div>
+      <div class="deco deco-peach-left"></div>
+      </div>
+
+      <div class="layer " data-x="0" data-y="1">
+      <div class="deco deco-peach-bottom"></div>
+      </div>
+
+      <div class="layer " data-x="1" data-y="0.3">
+      <div class="deco deco-blue-top"></div>
+      <div class="deco deco-blue-faint"></div>
+      <div class="deco deco-light-right"></div>
+      </div>
+
+      <div class="layer layer-visual" data-x="0.72" data-y="0.5">
+      <div class="globe"></div>
+      <img class="world" src="world-dots.svg" alt="" />
+
+      <!-- Network lines -->
+      <svg class="network" viewBox="0 0 1920 1280" aria-hidden="true">
+        <defs>
+          <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f26a35" stop-opacity=".55" />
+            <stop offset="1" stop-color="#f6a47f" stop-opacity=".25" />
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#lineGrad)" stroke-width="1.1" stroke-opacity=".8">
+          <!-- meridians -->
+          <path d="M1295 340 Q 760 520 560 1250" />
+          <path d="M1295 340 Q 900 560 780 1250" />
+          <path d="M1295 340 Q 1050 600 980 1250" />
+          <path d="M1295 340 Q 1200 700 1160 1250" />
+          <path d="M1295 340 Q 1390 700 1430 1250" />
+          <path d="M1295 340 Q 1540 600 1610 1250" />
+          <path d="M1295 340 Q 1690 560 1810 1250" />
+          <path d="M1295 340 Q 1830 520 2030 1250" />
+          <!-- node links -->
+          <path d="M997 458 Q 1140 360 1295 340" />
+          <path d="M1295 340 Q 1450 360 1588 460" />
+          <path d="M997 458 Q 1150 470 1292 630" />
+          <path d="M1588 460 Q 1440 470 1292 630" />
+          <path d="M968 645 Q 1130 600 1292 630" />
+          <path d="M1292 630 Q 1460 600 1631 643" />
+          <path d="M968 645 Q 980 740 1002 830" />
+          <path d="M1631 643 Q 1610 740 1592 830" />
+          <path d="M1002 830 Q 1300 650 1592 830" />
+          <path d="M997 458 Q 960 550 968 645" />
+          <path d="M1588 460 Q 1630 550 1631 643" />
+          <path d="M800 1250 Q 1000 600 1295 470" />
+          <path d="M1295 470 Q 1600 600 1800 1250" />
+        </g>
+        <g class="net-dots" fill="#f2561d">
+          <circle cx="1184" cy="350" r="4.5" /><circle cx="1213" cy="343" r="2.5" />
+          <circle cx="1180" cy="415" r="6" /><circle cx="1293" cy="465" r="6.5" />
+          <circle cx="1293" cy="423" r="2" /><circle cx="1407" cy="420" r="6" />
+          <circle cx="1111" cy="524" r="6.5" /><circle cx="1474" cy="532" r="6.5" />
+          <circle cx="978" cy="546" r="4.5" /><circle cx="1614" cy="549" r="4" />
+          <circle cx="1154" cy="590" r="4.5" /><circle cx="1435" cy="593" r="4.5" />
+          <circle cx="1184" cy="650" r="4" /><circle cx="1405" cy="652" r="4" />
+          <circle cx="1073" cy="693" r="6.5" /><circle cx="1517" cy="694" r="6.5" />
+          <circle cx="810" cy="722" r="5" /><circle cx="975" cy="737" r="4" />
+          <circle cx="1614" cy="743" r="4.5" /><circle cx="1796" cy="726" r="5.5" />
+          <circle cx="1210" cy="853" r="4.5" /><circle cx="1160" cy="898" r="4.5" />
+          <circle cx="1375" cy="850" r="4" /><circle cx="746" cy="860" r="4" />
+          <circle cx="796" cy="930" r="4.5" /><circle cx="818" cy="975" r="4" />
+          <circle cx="884" cy="1048" r="4.5" /><circle cx="658" cy="1080" r="4.5" />
+          <circle cx="586" cy="1046" r="3" /><circle cx="1507" cy="1050" r="4.5" />
+          <circle cx="1782" cy="937" r="4.5" /><circle cx="1796" cy="998" r="4.5" />
+          <circle cx="1850" cy="865" r="3.5" /><circle cx="914" cy="552" r="2" />
+          <circle cx="1680" cy="553" r="2" /><circle cx="1113" cy="420" r="1.5" />
+          <circle cx="743" cy="1060" r="2" /><circle cx="1518" cy="626" r="2" />
+        </g>
+      </svg>
+<!-- Nodes -->
+      <a href="#" class="node node-orange" style="left:1295px;top:340px" data-label="Data Confidence">
+        <span class="core"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7.5" ry="3" class="fill" /><path class="fill" d="M4.5 8.2c1.4 1.4 4.4 2.3 7.5 2.3s6.1-.9 7.5-2.3v3.3c0 1.7-3.4 3-7.5 3s-7.5-1.3-7.5-3z" /><path class="fill" d="M4.5 14.2c1.4 1.4 4.4 2.3 7.5 2.3s6.1-.9 7.5-2.3v3.6c0 1.7-3.4 3-7.5 3s-7.5-1.3-7.5-3z" /></svg></span>
+      </a>
+      <p class="label" style="left:1295px;top:220px;text-align:center;transform:translateX(-50%)">Data<br />Confidence</p>
+
+      <a href="#" class="node node-peach" style="left:997px;top:458px" data-label="Ideator Demographics">
+        <span class="core"><svg viewBox="0 0 24 24" class="stroke"><circle cx="8.5" cy="8" r="3.2" /><circle cx="16" cy="8" r="3.2" /><path d="M2.8 19.5c0-3.4 2.6-6 5.7-6s5.7 2.6 5.7 6" /><path d="M12.6 14.1c1-.4 2.1-.6 3.4-.6 3.1 0 5.4 2.6 5.4 6" /></svg></span>
+      </a>
+      <p class="label" style="left:976px;top:337px;text-align:center;transform:translateX(-50%)">Ideator<br />Demographics</p>
+
+      <a href="#" class="node node-blue" style="left:1588px;top:460px" data-label="Record Explorer">
+        <span class="core"><svg viewBox="0 0 24 24"><rect x="5" y="2.5" width="14" height="19" rx="2.4" class="fill-navy" /><path d="M8.5 8h7M8.5 12h7M8.5 16h4" class="stroke-white" /></svg></span>
+      </a>
+      <p class="label" style="left:1594px;top:340px;text-align:center;transform:translateX(-50%)">Record<br />Explorer</p>
+
+      <a href="#" class="node node-orange" style="left:1292px;top:630px" data-label="Value Realization">
+        <span class="core core-text">$</span>
+      </a>
+      <p class="label" style="left:1293px;top:510px;text-align:center;transform:translateX(-50%)">Value<br />Realization</p>
+
+      <a href="#" class="node node-blue" style="left:968px;top:645px" data-label="Strategic Portfolio">
+        <span class="core"><svg viewBox="0 0 24 24" class="fill-navy-all"><rect x="3.5" y="13" width="4.2" height="7.5" rx=".6" /><rect x="9.9" y="8.5" width="4.2" height="12" rx=".6" /><rect x="16.3" y="4" width="4.2" height="16.5" rx=".6" /></svg></span>
+      </a>
+      <p class="label" style="left:898px;top:580px;text-align:right;transform:translateX(-100%)">Strategic<br />Portfolio</p>
+
+      <a href="#" class="node node-peach" style="left:1631px;top:643px" data-label="Implementation &amp; Scale">
+        <span class="core"><svg viewBox="0 0 24 24" class="stroke"><circle cx="12" cy="12" r="3.2" /><path d="M10.3 2.8h3.4l.5 2.6 1.7.8 2.2-1.5 2.4 2.4-1.5 2.2.8 1.7 2.6.5v3.4l-2.6.5-.8 1.7 1.5 2.2-2.4 2.4-2.2-1.5-1.7.8-.5 2.6h-3.4l-.5-2.6-1.7-.8-2.2 1.5-2.4-2.4 1.5-2.2-.8-1.7-2.6-.5v-3.4l2.6-.5.8-1.7-1.5-2.2 2.4-2.4 2.2 1.5 1.7-.8z" /></svg></span>
+      </a>
+      <p class="label" style="left:1773px;top:577px;text-align:center;transform:translateX(-50%)">Implementation<br />&amp; Scale</p>
+
+      <a href="#" class="node node-gray" style="left:1002px;top:830px" data-label="Leadership Cockpit">
+        <span class="core"><svg viewBox="0 0 24 24" class="stroke"><path d="M9 17.5h6M9.5 20.5h5" /><path d="M8.6 14.8C7 13.6 6 11.8 6 9.8a6 6 0 1 1 12 0c0 2-1 3.8-2.6 5-.6.5-.9 1-.9 1.7v1H9.5v-1c0-.7-.3-1.2-.9-1.7z" /></svg></span>
+      </a>
+      <p class="label" style="left:928px;top:803px;text-align:right;transform:translateX(-100%)">Leadership<br /><span class="indent">Cockpit</span></p>
+
+      <a href="#" class="node node-blue" style="left:1592px;top:830px" data-label="Governance Flow">
+        <span class="core"><svg viewBox="0 0 24 24"><path class="fill-navy" d="M12 2.2 20 5.3v6.2c0 5-3.4 8.9-8 10.3-4.6-1.4-8-5.3-8-10.3V5.3z" /><path class="stroke-white" d="m8.4 12.1 2.5 2.5 4.8-5" /></svg></span>
+      </a>
+      <p class="label" style="left:1668px;top:802px;text-align:left">Governance<br />Flow</p>
+      </div>
+
+      <div class="layer " data-x="0.18" data-y="0">
+      <a href="#" class="logo" aria-label="ICBA Explorer">
+          <svg class="logo-mark" viewBox="0 0 90 84" aria-hidden="true">
+            <defs>
+              <linearGradient id="logoA" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff7a3a" />
+                <stop offset="1" stop-color="#e8430f" />
+              </linearGradient>
+              <linearGradient id="logoB" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffa36c" />
+                <stop offset="1" stop-color="#f26322" />
+              </linearGradient>
+            </defs>
+            <path d="M45 0 L90 80 L72 80 L45 30 L18 80 L0 80 Z" fill="url(#logoA)" />
+            <path d="M45 46 L68 82 L45 70 L22 82 Z" fill="url(#logoB)" />
+          </svg>
+          <span class="logo-text">
+            <span class="logo-title">ICBA</span>
+            <span class="logo-sub">EXPLORER</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="layer " data-x="0.45" data-y="0">
+      <nav class="nav">
+          <a href="#" class="nav-link is-active">Ideas</a>
+          <span class="nav-dot"></span>
+          <a href="#" class="nav-link">People</a>
+          <span class="nav-dot"></span>
+          <a href="#" class="nav-link">Impact</a>
+        </nav>
+      </div>
+
+      <div class="layer " data-x="1" data-y="0">
+      <span class="header-divider"></span>
+        <p class="tagline">A Healthier World Together</p>
+      </div>
+
+      <div class="layer " data-x="0.18" data-y="0.5">
+      <!-- Hero copy -->
+      <section class="hero">
+        <p class="eyebrow">TURN IDEAS INTO IMPACT</p>
+        <h1 class="title">Welcome to<br />ICBA <span>Explorer</span></h1>
+        <p class="lead">Your central workspace for leadership insights,<br />governance flow, implementation scale,<br />value realization, and ideation demographics.</p>
+        <div class="actions">
+          <a href="#" class="btn btn-primary">Explore Dashboards
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" /></svg>
+          </a>
+          <a href="#" class="btn btn-outline" id="watchVideo">
+            <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" /></svg></span>
+            Watch Video
+          </a>
+        </div>
+      </section>
+      <div class="pillars">
+        <span class="rule"></span>
+        <ul>
+          <li>PEOPLE</li>
+          <li>IDEAS</li>
+          <li>SOLUTIONS</li>
+          <li>BETTER CARE</li>
+        </ul>
+      </div>
+      </div>
+
+      <div class="layer " data-x="0.18" data-y="1">
+      <div class="foot-left">
+        <span class="rule"></span>
+        <p>FROM INSIGHT TO IMPACT</p>
+      </div>
+      </div>
+
+      <div class="layer " data-x="1" data-y="1">
+      <div class="foot-right">
+        <p class="brand">ICBA EXPLORER</p>
+        <p>IDEAS TODAY.</p>
+        <p>A HEALTHIER TOMORROW.</p>
+      </div>
+      </div>
+
+      <!-- Video modal -->
+      <div class="modal" id="videoModal" aria-hidden="true">
+        <div class="modal-card">
+          <button class="modal-close" aria-label="Close">&times;</button>
+          <div class="modal-body">
+            <span class="play play-lg"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" /></svg></span>
+            <p>ICBA Explorer — From Insight to Impact</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
